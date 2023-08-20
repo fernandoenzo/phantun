@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status.
+set -x  # All executed commands are printed to the terminal
+
+wget -O /tmp/phantun.zip https://github.com/dndx/phantun/releases/download/v0.6.0/phantun_x86_64-unknown-linux-gnu.zip
+unzip /tmp/phantun.zip
+mv phantun_client phantun_server /sbin
+
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.aptitude /root/.wget-hsts
+
